@@ -8,7 +8,7 @@ const app: Express = express()
 
 app.use(express.json())
 
-app.get('/api', (req, res, next) => {
+app.use('/api',(req, res, next) => {
     console.log(`/api [${new Date().toISOString()}] ${req.method} ${req.url}`);
     next(); // Pass to rootRouter
 }, rootRouter)
